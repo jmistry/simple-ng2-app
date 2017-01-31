@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AddressesViewComponent } from './addresses-view/addresses-view.component';
 import {AddressesService} from "./addresses.service";
+import {StoreModule} from "@ngrx/store";
+import {reducer} from "./reducers/index";
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import {AddressesService} from "./addresses.service";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    StoreModule.provideStore(reducer),
   ],
   providers: [AddressesService],
   bootstrap: [AppComponent]

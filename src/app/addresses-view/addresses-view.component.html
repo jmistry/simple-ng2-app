@@ -1,7 +1,8 @@
-<div *ngFor="let address of addresses">
+<div *ngFor="let address of (addresses$ | async), let i = index">
   num: <input [value]="address.num">
   street : <input [value]="address.street">
   code: <input [value]="address.code">
+  <button (click)="removeAddress(i)">Remove</button>
 </div>
 <br>
   num: <input [(ngModel)]="num">
