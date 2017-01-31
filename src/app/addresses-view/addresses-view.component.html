@@ -1,0 +1,11 @@
+<div *ngFor="let address of addresses">
+  num: <input [value]="address.num">
+  street : <input [value]="address.street">
+  code: <input [value]="address.code">
+</div>
+<br>
+  num: <input [(ngModel)]="num">
+  street : <input [(ngModel)]="street">
+  code: <input [(ngModel)]="code">
+<button (click) = "addNewAddress(num, street, code)">add address</button>
+
